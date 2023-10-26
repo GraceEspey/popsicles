@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+label {
+    display: block;
+    margin-top: 10px;
+}
+form #submit {
+    width: 150px;
+    margin-top: 10px;
+    grid-area:submit;
+    width: 25%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+}
+main h2{
+    grid-area:contact-us;
+}
+main #name {
+    grid-area:name;
+}
+main #how{
+    grid-area: how;
+}
+main #favorite {
+    grid-area: favorite;
+}
+main #comments{
+    grid-area: comments;
+}
+
+main {
+    display: grid;
+    grid-area: contact-main;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "contact-us"
+    "name"
+    "how"
+    "favorite"
+    "comments"
+    "submit";
+    justify-items: left;
+    align-items: center;
+    gap: 10px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 8fr 1fr;
+    grid-template-areas:
+        "header"
+        "contact-main"
+        "footer"
+    ;
+    height: 100vh;
+    gap: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src = "images/blue-pop.png" alt="blue popsicle"/>
+        <h1>Fred's Frozen Pops</h1>
+        <nav id="site-nav">
+            <ul>
+                <li><a href="#"><strong>Home</strong></a></li>
+                <li><a href="#"><strong>Store</strong></a></li>
+                <li><a href="#"><strong>Contact Us</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contact Us</h2>
+        <form action="/" method="POST" >
+            <label for="name">Name:</label>
+        <input type="text" id="name" />
+        <div>
+            <label for="how">How did you hear of us?</label>
+            <input id="how" name="how" type="number" />
+        </div>
+        <div>
+            <label for="favorite">What color is your favorite pop?</label>
+            <input id="favorite" name="favorite" style = "width:200px;"type="color" />
+        </div>
+        <div>
+            <label for="comments">Please let us know any comments you have:</label>
+            <input id="comments" name="comments" style = "height:150px; width: 200px;" type="text" />
+        </div>
+        <div>
+            <input id ="submit" type="submit" />
+        </div>
+        </form>
+    </main>
+    <footer>
+        &copy; 2022. All rights reserved.
+    </footer>
+    
+</body>
+</html>

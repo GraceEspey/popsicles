@@ -1,0 +1,224 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #87CEEB;
+}
+
+nav ul {
+    grid-area: nav;
+    margin: 0;
+    padding: 20px 0 0 0;
+}
+
+nav ul li {
+
+    float:left;
+    list-style: none;
+    width: 30%;
+    background-color: #00afef;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+nav ul li:nth-child(1){
+    grid-area: home;
+}
+nav ul li:nth-child(2){
+    grid-area: store;
+}
+nav ul li:nth-child(3){
+    grid-area: contact;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+  }
+  nav ul li a:hover {
+    text-decoration: none;
+    color: white;
+    display: block;
+  }
+
+header img {
+    grid-area: blue-pop;
+    height: 100px;
+    width: auto;
+    justify-content: right;
+}
+header h1 {
+    grid-area: title;
+    padding-left: 20px;
+    padding-top: 10px;
+    justify-content: left;
+}
+
+main img {
+    grid-area: rainbow;
+    object-fit: cover;
+    margin-right: 20px;
+    height: 350px;
+    width: 100%;
+}
+main ul{
+    grid-area: facts;
+}
+
+main li:before {
+    content: '🍡';
+    margin-left: -31px;
+    padding-right: 8px;
+}
+main li {
+    list-style: none;
+    font-size: large;
+}
+ul label {
+    font-size: 25px;
+    margin: -1em;;
+
+}
+
+
+main, section, footer {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+}
+section div.event img{
+    grid-area: event-pop;
+}
+section div.event h1{
+    grid-area: event-h1;
+}
+section div.event p{
+    grid-area: event-p;
+}
+section div.store-ad h1{
+    grid-area: ad-h1;
+}
+section div.store-ad p {
+    grid-area: ad-p
+}
+footer {
+    grid-area: footer;
+
+}
+
+.store-button { /* used for store link in "Get refreshed" section */
+    grid-area:button;
+    width: 25%;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+ 
+
+header {
+    grid-area:header;
+    display: grid;
+    grid-template-columns: 1fr 9fr 10fr;
+    grid-template-areas: 
+        "blue-pop title nav";
+    grid-gap: 10px;
+    align-items: center;
+
+}
+main {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 1fr ,1fr ,1fr;
+    grid-template-areas:
+    "rainbow facts facts";
+    justify-items: center;
+    align-items: center;
+}
+.event {
+    display: grid;
+    grid-area: event;
+    grid-template-columns: 1fr, 6fr;
+    grid-template-areas:
+    "event-pop event-h1"
+    "event-pop event-p";
+}
+.store-ad{
+    display: grid;
+    grid-area: ad;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "ad-h1"
+    "ad-p"
+    "button";
+    justify-items: center;
+    align-items: center;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "event ad"
+        "footer footer"
+    ;
+    height: 100vh;
+    gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        grid-area:header;
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        grid-template-areas: 
+            "blue-pop title" 
+            "nav";
+        grid-gap: 10px;
+        align-items: center;
+    
+    }
+    main {
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "rainbow"
+        "facts";
+        justify-items: center;
+        align-items: center;
+    }
+    .event {
+        display: grid;
+        grid-area: event;
+        grid-template-columns: 1fr, 1fr;
+        grid-template-areas:
+        "event-pop event-h1"
+        "event-p event-p";
+    }
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "event"
+            "ad"
+            "footer"
+        ;
+        height: 100vh;
+        gap: 10px;
+
+    }
+
+
+/* contact */
+}
+
